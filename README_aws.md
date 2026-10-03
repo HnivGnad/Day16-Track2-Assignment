@@ -161,16 +161,18 @@ Chạy script và điền kết quả vào bảng:
 
 | Metric | Kết quả |
 |---|---|
-| Thời gian load data | |
-| Thời gian training | |
-| Best iteration | |
-| AUC-ROC | |
-| Accuracy | |
-| F1-Score | |
-| Precision | |
-| Recall | |
-| Inference latency (1 row) | |
-| Inference throughput (1000 rows) | |
+| Thời gian load data | 1.0045 s |
+| Thời gian training | 8.4721 s |
+| Best iteration | 332 |
+| AUC-ROC | 0.974047 |
+| Accuracy | 0.999561 |
+| F1-Score | 0.860335 |
+| Precision | 0.950617 |
+| Recall | 0.785714 |
+| Inference latency (1 row) | 0.6198 ms (trung bình 200 lần sau warmup) |
+| Inference throughput (1000 rows) | 85,809.12 dòng/s (trung bình 50 batch, 0.011654 s/batch) |
+
+Kết quả thực đo lúc 21:00 ngày 03/10/2026 (Asia/Bangkok) trên Compute Node **`m7i-flex.large`**, dùng 2 luồng CPU, LightGBM 4.7.0 và toàn bộ dataset; khớp với ảnh [`01_benchmark.png`](01_benchmark.png). Loại máy thực tế khác `t3.medium` mặc định trong hướng dẫn. Inference đo trong tiến trình Python, không bao gồm mạng/API. Xem [`deliverables/benchmark_result.json`](deliverables/benchmark_result.json), [`deliverables/report.md`](deliverables/report.md) và [`deliverables/submission_audit.md`](deliverables/submission_audit.md) để biết tiến độ nộp bài. Hạ tầng đã được destroy; Terraform state local không còn tài nguyên được quản lý.
 
 ---
 
