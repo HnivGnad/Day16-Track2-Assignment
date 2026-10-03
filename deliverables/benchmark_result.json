@@ -1,0 +1,89 @@
+{
+  "run_timestamp_utc": "2026-10-03T14:00:03.795403+00:00",
+  "dataset": {
+    "source": "kaggle:mlg-ulb/creditcardfraud",
+    "file": "creditcard.csv",
+    "sha256": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89",
+    "rows": 284807,
+    "features": 30,
+    "fraud_rows": 492,
+    "train_rows": 182276,
+    "validation_rows": 45569,
+    "test_rows": 56962,
+    "test_fraud_rows": 98
+  },
+  "environment": {
+    "ec2_instance_type": "m7i-flex.large",
+    "platform": "Linux-6.8.0-1066-aws-x86_64-with-glibc2.35",
+    "architecture": "x86_64",
+    "logical_cpus": 2,
+    "threads_used": 2,
+    "python": "3.10.12",
+    "lightgbm": "4.7.0",
+    "scikit_learn": "1.7.2",
+    "pandas": "2.3.3",
+    "numpy": "2.2.6"
+  },
+  "method": {
+    "random_seed": 42,
+    "split": "stratified 64% train / 16% validation / 20% test",
+    "early_stopping_metric": "validation average_precision",
+    "early_stopping_rounds": 50,
+    "decision_threshold": 0.5,
+    "latency_repetitions": 200,
+    "batch_repetitions": 50,
+    "warmup_calls_per_measurement": 5,
+    "batch_rows": 1000,
+    "timing_scope": "in-process LGBMClassifier.predict_proba; excludes network and input preparation",
+    "model_parameters": {
+      "boosting_type": "gbdt",
+      "class_weight": null,
+      "colsample_bytree": 1.0,
+      "importance_type": "split",
+      "learning_rate": 0.05,
+      "max_depth": -1,
+      "min_child_samples": 20,
+      "min_child_weight": 0.001,
+      "min_split_gain": 0.0,
+      "n_estimators": 1000,
+      "n_jobs": 2,
+      "num_leaves": 31,
+      "objective": "binary",
+      "random_state": 42,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0,
+      "subsample_for_bin": 200000,
+      "subsample_freq": 0,
+      "metric": "average_precision",
+      "deterministic": true,
+      "force_col_wise": true,
+      "verbosity": -1
+    }
+  },
+  "load_data_seconds": 1.0045072200000504,
+  "training_seconds": 8.472073820999867,
+  "best_iteration": 332,
+  "auc_roc": 0.9740465615058629,
+  "accuracy": 0.9995611109160493,
+  "f1_score": 0.8603351955307262,
+  "precision": 0.9506172839506173,
+  "recall": 0.7857142857142857,
+  "average_precision": 0.8721122357331913,
+  "majority_class_accuracy": 0.9982795547909132,
+  "confusion_matrix": [
+    [
+      56860,
+      4
+    ],
+    [
+      21,
+      77
+    ]
+  ],
+  "inference_latency_ms": 0.6198394149942033,
+  "inference_latency_p50_ms": 0.6196525000632391,
+  "inference_latency_p95_ms": 0.6611128497752361,
+  "inference_batch_seconds": 0.011653772259978722,
+  "inference_throughput_rows_per_second": 85809.12495039833
+}
