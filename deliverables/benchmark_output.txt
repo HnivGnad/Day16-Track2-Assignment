@@ -1,0 +1,23 @@
+LightGBM CPU benchmark | Kaggle mlg-ulb/creditcardfraud
+Rows: 284,807 | train/validation/test: 182,276/45,569/56,962 | threads: 2
+Training until validation scores don't improve for 50 rounds
+Early stopping, best iteration is:
+[332]	valid_0's average_precision: 0.829678
+Evaluated only: average_precision
+
+| Metric | Kết quả |
+|---|---|
+| Thời gian load data | 1.0045 s |
+| Thời gian training | 8.4721 s |
+| Best iteration | 332 |
+| AUC-ROC | 0.974047 |
+| Accuracy | 0.999561 |
+| F1-Score | 0.860335 |
+| Precision | 0.950617 |
+| Recall | 0.785714 |
+| Inference latency (1 row) | 0.6198 ms (mean, 200 calls) |
+| Inference throughput (1000 rows) | 85809.12 rows/s (mean batch: 0.011654 s) |
+
+Average precision: 0.872112
+Confusion matrix [[TN, FP], [FN, TP]]: [[56860, 4], [21, 77]]
+Saved: benchmark_result.json, benchmark_metrics.md, report.md
