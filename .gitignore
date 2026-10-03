@@ -20,3 +20,16 @@ lab-key.pub
 # Environment Variables
 .env
 .env.local
+
+# Local SSH connection files
+.local-lab/
+lab-known-hosts
+
+# Generated submission archives
+deliverables/*.zip
+!deliverables/terraform_source.zip
+
+# Python caches and local dataset
+__pycache__/
+*.py[cod]
+creditcard.csv
